@@ -1,0 +1,37 @@
+# Rafta: kaynaktan derleyip çalıştırır. Production için de bu dosya yeterlidir.
+#
+#   cp .env.example .env            # ayarları düzenle (RAFTA_SECRET_KEY önerilir)
+#   docker compose up -d --build
+#   docker compose logs rafta | grep setup     # ilk kurulum bağlantısı
+#
+# Güncelleme:  git pull && docker compose up -d --build
+# Kalıcı her şey (veritabanı, anahtar) bu dosyanın yanındaki ./data klasöründedir.
+services:
+  rafta:
+    build: .
+    image: ${RAFTA_IMAGE:-rafta}:${RAFTA_TAG:-latest}
+    container_name: rafta
+    restart: ${RAFTA_RESTART:-unless-stopped}
+    # Varsayılan: yalnızca bu makineden erişilir. Yerel ağa açmak için .env'de RAFTA_BIND=0.0.0.0.
+    # İnternete açacaksan önüne HTTPS koy (README > Production).
+    ports:
+      - "${RAFTA_BIND:-127.0.0.1}:${RAFTA_PORT:-8080}:8080"
+    environment:
+      # Boş bırakılırsa ilk açılışta ./data/secret.key üretilir.
+      RAFTA_SECRET_KEY: ${RAFTA_SECRET_KEY:-}
+      RAFTA_SESSION_DAYS: ${RAFTA_SESSION_DAYS:-30}
+      TZ: ${TZ:-Europe/Istanbul}
+    volumes:
+      - ./data:/data
+    # Container dosya sistemi salt okunur; yazılabilen tek yer /data (ve geçici /tmp).
+    read_only: true
+    tmpfs:
+      - /tmp
+    # Önerilir. Docker snap ile kuruluysa AppArmor entrypoint'i engelleyebilir; o durumda kapalı bırak.
+    # security_opt:
+    #   - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,34 @@
+# Rafta: derlemeden, bir registry'deki hazır imajla çalıştırır.
+# İmajı başka bir makinede derleyip kendi registry'ne gönderiyorsan bunu kullan:
+#
+#   docker build -t REGISTRY/rafta:latest . && docker push REGISTRY/rafta:latest
+#
+# Sunucuda bu dosyayı bir klasöre docker-compose.yml adıyla kopyala, yanına .env koy
+# (RAFTA_IMAGE=REGISTRY/rafta) ve:
+#
+#   docker compose pull && docker compose up -d
+#
+# Kalıcı her şey (veritabanı, anahtar) bu dosyanın yanındaki ./data klasöründedir.
+services:
+  rafta:
+    image: ${RAFTA_IMAGE:-rafta}:${RAFTA_TAG:-latest}
+    container_name: rafta
+    restart: ${RAFTA_RESTART:-unless-stopped}
+    ports:
+      - "${RAFTA_BIND:-127.0.0.1}:${RAFTA_PORT:-8080}:8080"
+    environment:
+      RAFTA_SECRET_KEY: ${RAFTA_SECRET_KEY:-}
+      RAFTA_SESSION_DAYS: ${RAFTA_SESSION_DAYS:-30}
+      TZ: ${TZ:-Europe/Istanbul}
+    volumes:
+      - ./data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    # security_opt:
+    #   - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

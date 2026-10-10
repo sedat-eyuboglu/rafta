@@ -1,0 +1,74 @@
+# Rafta .gitignore
+# Bu repo public. Buraya eklenen kurallar; veri, anahtar, yedek ve dışa aktarma
+# dosyalarının yanlışlıkla commit edilmesini engeller. Bir şeyi commit etmeden önce:
+#   git status --ignored   ve   git diff --cached --stat
+
+# ---- Uygulama verisi (asla commit edilmez) -------------------------------------
+# Veritabanı, şifreleme anahtarı ve container verisi burada durur.
+/data/
+data/
+# SQLite dosyaları her yerde (yedekler, WAL/SHM dahil)
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*-wal
+*-shm
+# Yedek klasörleri
+backups/
+backup/
+*.bak
+
+# ---- Anahtarlar ve sırlar -------------------------------------------------------
+# Şifreleme anahtarı (data/ dışında da durabilir)
+secret.key
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+# Ortam dosyaları: yalnızca örnek dosya commit edilir
+.env
+.env.*
+!.env.example
+*.env
+# Uygulamanın indirdiği kurtarma kodları ve CSV envanter dışa aktarımları
+rafta-kurtarma-kodlari*.txt
+*kurtarma*.txt
+*recovery*codes*.txt
+rafta-sunucular-*.csv
+*.csv
+
+# ---- Kişisel notlar ------------------------------------------------------------
+# Kendi sunucuna özel kurulum notları (IP, port, registry…) için: PROD.local.md vb.
+*.local.md
+*.local.*
+local/
+
+# ---- Derleme ve bağımlılıklar --------------------------------------------------
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vitest/
+.cache/
+
+# ---- Loglar --------------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+
+# ---- Editör, işletim sistemi, araçlar ------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*~
+# Claude Code ve benzeri araçların yerel ayarları
+.claude/
+CLAUDE.local.md
