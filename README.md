@@ -9,6 +9,11 @@
   Şifre yok: giriş telefondaki authenticator koduyla yapılır.
 </p>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/sunucular-koyu.png">
+  <img src="docs/screenshots/sunucular-acik.png" alt="Rafta sunucu listesi: durum özeti, maliyet, yenileme uyarıları, arama ve filtreler">
+</picture>
+
 ## Rafta nedir?
 
 - Sunucularının kaydını tuttuğun küçük bir web uygulamasıdır: hostname, IP adresleri, donanım, konum, maliyet, notlar.
@@ -40,6 +45,33 @@
 - **Dışa aktarma ve yedek:** filtrelenmiş listeyi CSV (Excel uyumlu) indirme, tek tıkla tutarlı veritabanı yedeği.
 - **Arayüz:** açık/koyu tema, mobil uyumlu, klavye kısayolları (`/` arama, `N` yeni kayıt, `E` düzenle).
   Arayüz Türkçedir.
+
+## Ekran görüntüleri
+
+**Sunucu detayı:** ağ, hazır SSH komutu, erişim bilgileri, donanım ve konum bilgileri.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/sunucu-detay-koyu.png">
+  <img src="docs/screenshots/sunucu-detay-acik.png" alt="Sunucu detay sayfası">
+</picture>
+
+**Şifreler:** tek satırdan hızlı ekleme; şifreler gizli durur, göster ya da kopyala denince çözülür.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/sifreler-koyu.png">
+  <img src="docs/screenshots/sifreler-acik.png" alt="Şifreler sayfası">
+</picture>
+
+**Giriş:** şifre yok, yalnızca authenticator kodu.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/giris-koyu.png">
+    <img src="docs/screenshots/giris-acik.png" alt="Authenticator koduyla giriş ekranı" width="640">
+  </picture>
+</p>
+
+Görüntülerdeki tüm veriler örnektir.
 
 ## Teknoloji
 
