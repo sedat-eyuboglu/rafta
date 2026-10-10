@@ -255,12 +255,7 @@ test/                 vitest testleri
 Şema değişikliği için `src/db/migrations.ts` dizisinin **sonuna** yeni bir migration ekle; mevcut migration'ları
 değiştirme.
 
-### Katkı
-
-Hata bildirimi ve pull request'ler memnuniyetle karşılanır: [issues](https://github.com/sedat-eyuboglu/rafta/issues).
-Göndermeden önce `npm test` ve `npm run typecheck` çalıştır. Güvenlik açığı bulursan issue'da açığın ayrıntılarını
-yazma; yalnızca bir güvenlik sorunu bulduğunu belirt, ayrıntılar için iletişime geçilir.
-
 ## Lisans
 
-[MIT](LICENSE)
+[MIT](LICENSE). Bu depo dışarıdan katkı (pull request) kabul etmiyor. Geliştirmek istersen fork'layıp kendi
+ihtiyacına göre ilerletebilirsin.
