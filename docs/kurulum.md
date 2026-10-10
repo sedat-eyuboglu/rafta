@@ -39,7 +39,7 @@ npm paketleri indirilir).
 ## 2. Kodu indir
 
 ```sh
-git clone https://github.com/KULLANICI/rafta.git
+git clone https://github.com/sedat-eyuboglu/rafta.git
 cd rafta
 ```
 

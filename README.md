@@ -57,7 +57,7 @@ authenticator koduyla yapılır.
 Docker ve Docker Compose yeterli.
 
 ```sh
-git clone https://github.com/KULLANICI/rafta.git
+git clone https://github.com/sedat-eyuboglu/rafta.git
 cd rafta
 cp .env.example .env
 sed -i "s|^RAFTA_SECRET_KEY=.*|RAFTA_SECRET_KEY=$(openssl rand -base64 32)|" .env
@@ -257,8 +257,9 @@ değiştirme.
 
 ### Katkı
 
-Hata bildirimi ve pull request'ler memnuniyetle karşılanır. Göndermeden önce `npm test` ve `npm run typecheck`
-çalıştır. Güvenlik açığı bulursan lütfen herkese açık issue yerine depo sahibine özel olarak bildir.
+Hata bildirimi ve pull request'ler memnuniyetle karşılanır: [issues](https://github.com/sedat-eyuboglu/rafta/issues).
+Göndermeden önce `npm test` ve `npm run typecheck` çalıştır. Güvenlik açığı bulursan herkese açık issue açma;
+GitHub'ın [özel güvenlik bildirimi](https://github.com/sedat-eyuboglu/rafta/security/advisories/new) ile bildir.
 
 ## Lisans
 
