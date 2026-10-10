@@ -258,8 +258,8 @@ değiştirme.
 ### Katkı
 
 Hata bildirimi ve pull request'ler memnuniyetle karşılanır: [issues](https://github.com/sedat-eyuboglu/rafta/issues).
-Göndermeden önce `npm test` ve `npm run typecheck` çalıştır. Güvenlik açığı bulursan herkese açık issue açma;
-GitHub'ın [özel güvenlik bildirimi](https://github.com/sedat-eyuboglu/rafta/security/advisories/new) ile bildir.
+Göndermeden önce `npm test` ve `npm run typecheck` çalıştır. Güvenlik açığı bulursan issue'da açığın ayrıntılarını
+yazma; yalnızca bir güvenlik sorunu bulduğunu belirt, ayrıntılar için iletişime geçilir.
 
 ## Lisans
 
