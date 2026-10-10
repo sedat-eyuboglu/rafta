@@ -8,9 +8,6 @@
     "type": "git",
     "url": "git+https://github.com/sedat-eyuboglu/rafta.git"
   },
-  "bugs": {
-    "url": "https://github.com/sedat-eyuboglu/rafta/issues"
-  },
   "keywords": [
     "self-hosted",
     "server-inventory",

@@ -1,7 +1,13 @@
-# Rafta
+<p align="center">
+  <img src="public/favicon.svg" alt="Rafta logosu" width="96" height="96">
+</p>
 
-Kendi sunucunda çalışan, sade bir **sunucu envanteri ve şifre kasası**. Şifre yok: giriş telefondaki
-authenticator koduyla yapılır.
+<h1 align="center">Rafta</h1>
+
+<p align="center">
+  Kendi sunucunda çalışan, sade bir <b>sunucu envanteri ve şifre kasası</b>.<br>
+  Şifre yok: giriş telefondaki authenticator koduyla yapılır.
+</p>
 
 ## Rafta nedir?
 
